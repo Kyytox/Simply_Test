@@ -33,8 +33,10 @@ function Actions() {
             </div>
             <div className="list-actions">
                 <div className="div-btn-selenium">
-                    {displayBtnSelenium === 1
-                        ? <button class="btn-5" onClick={callSelenium}><span>Tester</span></button>
+                    {listActions.length > 0 
+                         ? displayBtnSelenium === 1
+                            ? <button class="btn-5" onClick={callSelenium}><span>Tester</span></button>
+                            : <p>Select minimum one test</p>
                         : <p></p>
                     } 
                 </div>

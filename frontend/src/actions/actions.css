@@ -321,6 +321,13 @@
     margin-bottom: 25px;
 }
 
+.div-btn-selenium p {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 12px;
+    color: white;
+}
+
 .btn-5,
 .btn-5 *,
 .btn-5 :after,
