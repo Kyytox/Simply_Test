@@ -1,5 +1,6 @@
 import React from "react";
 import 'animate.css';
+import "./actions.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Checkbox from '@mui/material/Checkbox';

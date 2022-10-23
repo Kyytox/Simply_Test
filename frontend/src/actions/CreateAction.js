@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComputerMouse, faKeyboard } from "@fortawesome/free-solid-svg-icons";
+import "./actions.css";
 
 
 function CreateAction({ listActions, setListActions }) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "./Header";
 import ListActions from "./ListActions";
 import CreateAction from "./CreateAction";
+import "./actions.css";
 
 function Actions() {
 
@@ -24,9 +24,8 @@ function Actions() {
     };
 
     return (
-        <div className="main">
+        <div className="main-action">
             <div className="content">
-                <Header></Header>
                 <CreateAction
                     listActions={listActions}
                     setListActions={setListActions}

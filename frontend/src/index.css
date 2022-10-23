@@ -5,9 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: #141E30;  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #243B55, #141E30);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #243B55, #141E30); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+  /* background: #1e7262;
+  background: -webkit-linear-gradient(to top, #191654, #43C6AC);
+  background: linear-gradient(to bottom, #191654, #1e7262); */
+  
+  background-color: #0e0f11;
 }
 
 code {

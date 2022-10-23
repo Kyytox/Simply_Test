@@ -1,0 +1,526 @@
+.main-action {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+/* Create Action */
+.content {
+    /* border: 1px solid blue; */
+    width: 27%;
+    position: fixed;
+    top: 9%;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-top-right-radius: 5px;
+}
+
+.div-create-action {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 6%;
+    padding: 15px;
+    align-items: center;
+    color: white;
+}
+
+.div-create-action h3 {
+    margin-bottom: 70px;
+}
+
+.div-form-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+.div-type-action-radio {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.div-type-action-radio span {
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* HIDE RADIO */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio]+span {
+    cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked+span {
+    /* outline: 1.5px solid #f00; */
+    background: #141E30;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #243B55, #202f4b);
+    background: linear-gradient(to top, #243B55, #202f4b);
+
+}
+
+.div-form-element {
+    width: 100%;
+    text-align: center;
+}
+
+/* input text  */
+.div-create-action input[type="text"i] {
+    margin-bottom: 10px;
+    width: 80%;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 0;
+    height: 35px;
+    padding-left: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.div-create-action input[type="text"i]::placeholder {
+    color: rgb(207, 207, 207);
+    font-size: 13px;
+}
+
+.div-create-action input[type="text"i]:focus {
+    outline: none;
+}
+
+.div-create-action input[name="name"] {
+    margin-bottom: 10%;
+}
+
+
+.time {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.time p {
+    margin: 0;
+}
+
+/* input number  */
+.div-create-action input[type="number"i] {
+    width: 15%;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 0;
+    height: 27px;
+    padding-left: 5px;
+    margin-right: 3px;
+    margin-left: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.div-create-action input[type="number"i]:focus {
+    outline: none;
+}
+
+
+
+
+.div-type-element-radio {
+    padding: 0 13%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.div-type-element-radio label {
+    margin-bottom: 25px;
+}
+
+.div-type-element-radio span {
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.btn-79,
+.btn-79 *,
+.btn-79 :after,
+.btn-79 :before,
+.btn-79:after,
+.btn-79:before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.btn-79 {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    font-weight: 900;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+}
+
+.btn-79:disabled {
+    cursor: default;
+}
+
+.btn-79:-moz-focusring {
+    outline: auto;
+}
+
+.btn-79 svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.btn-79 [hidden] {
+    display: none;
+}
+
+.btn-79 {
+    --height: 80px;
+    background: none;
+    border-radius: 999px;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    height: var(--height);
+    -webkit-mask-image: none;
+    padding: 0 3rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.btn-79 span {
+    font-weight: 900;
+    mix-blend-mode: difference;
+}
+
+.btn-79:before {
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    border-radius: 20px;
+    content: "";
+    height: calc(var(--height) / 1.7);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    width: calc(var(--height) / 1.7);
+}
+
+.btn-79:hover:before {
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Liist actions */
+.list-actions {
+    /* border: 1px solid green; */
+    margin-left: 27%;
+    width: 100%;
+    padding: 20px;
+    padding-right: 0;
+    margin-top: 6%;
+}
+
+.div-btn-selenium {
+    width: 89%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 25px;
+}
+
+.btn-5,
+.btn-5 *,
+.btn-5 :after,
+.btn-5 :before,
+.btn-5:after,
+.btn-5:before {
+    border: 0;
+    box-sizing: border-box;
+}
+
+.btn-5 {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background: rgba(255, 255, 255, 0.2);
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    font-weight: 900;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.btn-5:disabled {
+    cursor: default;
+}
+
+.btn-5:-moz-focusring {
+    outline: auto;
+}
+
+.btn-5 svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.btn-5 [hidden] {
+    display: none;
+}
+
+.btn-5 {
+    border-width: 2px;
+    overflow: hidden;
+    padding: 0.8rem 3rem;
+    position: relative;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.btn-5 span {
+    mix-blend-mode: difference;
+}
+
+.btn-5:before {
+    --tilt: 1.2rem;
+    background: #141E30;
+    /*fallbackforoldbrowsers*/
+    background: -webkit-linear-gradient(to top, #243B55, #202f4b);
+    background: linear-gradient(to top, #243B55, #202f4b);
+    -webkit-clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 50%, calc(100% - var(--tilt)) 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 50%, calc(100% - var(--tilt)) 100%, 0 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: calc(-100% - var(--tilt));
+    position: absolute;
+    top: 0;
+    width: calc(100% + var(--tilt));
+    transition: transform 0.4s ease;
+    -webkit-transition: transform 0.4s ease;
+    -moz-transition: transform 0.4s ease;
+    -ms-transition: transform 0.4s ease;
+    -o-transition: transform 0.4s ease;
+    transform: translateX(var(--progress, 0));
+    -webkit-transform: translateX(var(--progress, 0));
+    -moz-transform: translateX(var(--progress, 0));
+    -ms-transform: translateX(var(--progress, 0));
+    -o-transform: translateX(var(--progress, 0));
+}
+
+.btn-5:hover:before {
+    --progress: 100%;
+}
+
+
+
+#div-list-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.items-action {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-right: 20px;
+    color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.items-action span {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.items-action .action-entete {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.items-action p {
+    text-align: left;
+    margin: 1px 0;
+}
+
+#type-action {
+    color: #cacaca;
+    font-size: 14px;
+}
+
+
+#type-element,
+#name-element,
+#input-element,
+#time-wait-action {
+    text-align: center;
+    color: #cacaca;
+    font-size: 14px;
+}
+
+#type-value,
+#name-value,
+#input-value,
+#time-value {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.infos-elements {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.infos-elements span {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.btn-action {
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.btn-delete-action {
+    background: none;
+    color: white;
+    border: 0;
+}
+
+.div-check span {
+    padding: 1px;
+    margin-bottom: 0;
+}

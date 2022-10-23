@@ -1,0 +1,114 @@
+.main-home {
+    margin-top: 6%;
+    color: white;
+    /* min-height: 95vh; */
+}
+
+
+
+.home-title {
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+
+.home-title h1 {
+    font-size: 60px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.home-description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20%;
+}
+
+
+
+
+
+.div-apps {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 25%;
+    padding: 40px;
+}
+
+.app-expli p {
+    text-align: center;
+    font-size: 20px;
+    color: #a1a1a1;
+}
+
+.div-btn a {
+    text-decoration: none;
+}
+
+.div-btn button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 27px;
+    border: 0;
+    padding: 15px;
+    background: none;
+    /*box-shadow: 0.15em 0.15em 0 0 rgb(201, 201, 201), inset 0.15em 0.15em 0 0 rgb(201, 201, 201);
+    */
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.div-btn button:hover,
+.div-btn button:focus {
+    box-shadow:
+        0 0 0 0 rgba(255, 255, 255, 0.2),
+        inset 6em 3.5em 0 0 rgba(255, 255, 255, 0.2);
+}
+
+
+.div-btn button svg {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+.div-boxs-apps {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+.box-app {
+    background-color: #383b4187;
+    width: 70%;
+    padding: 20px;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
