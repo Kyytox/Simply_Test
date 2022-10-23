@@ -8,16 +8,47 @@ body {
   /* background: #141E30;  /* fallback for old browsers */
   /* background: -webkit-linear-gradient(to right, #243B55, #141E30);  Chrome 10-25, Safari 5.1-6 */
   /* background: linear-gradient(to right, #243B55, #141E30); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  
+
+
   /* background: #1e7262;
   background: -webkit-linear-gradient(to top, #191654, #43C6AC);
   background: linear-gradient(to bottom, #191654, #1e7262); */
-  
+
   background-color: #0e0f11;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0e0f11;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(112, 112, 112);
 }

@@ -36,6 +36,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
     width: 25%;
     padding: 40px;
 }
@@ -111,4 +112,16 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+}
+
+
+.footer {
+    text-align: center;
+    margin: 100px 0;
+}
+
+.footer hr{
+    width: 60%;
+    border: 0;
+    border-bottom: 0.5px solid white;
 }
