@@ -1,7 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faComputerMouse, faKeyboard } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import imgVerifDesign from "./verify-design.png"
+import imgAutoTest from "./automate-test.png"
+import vidAutoTest from "./automate-test.mp4"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "./home.css";
@@ -28,6 +31,7 @@ function Home() {
             <div className="home-description">
                 <div className="div-apps" data-aos="fade-up-right">
                     <div className="app-expli">
+                        <img src={imgAutoTest} alt="Autoamte Test"></img>
                         <p>Automate your tests by creating individual test</p>
                     </div>
                     <div className="div-btn">
@@ -38,6 +42,7 @@ function Home() {
                 </div>
                 <div className="div-apps" data-aos="fade-up-left">
                     <div className="app-expli">
+                        <img src={imgVerifDesign} alt="Verify Design"></img>
                         <p>Check the compatibility of your design on different browsers</p>
                     </div>
                     <div className="div-btn">
@@ -50,10 +55,34 @@ function Home() {
 
             <div className="div-boxs-apps" data-aos="fade-right">
                 <div className="box-app">
-                    <p>Automate your tests by creating individual action</p>
-                    <p>Automate your tests by creating individual action</p>
-                    <p>Automate your tests by creating individual action</p>
-                    <p>Automate your tests by creating individual action</p>
+                    <div className="box-app-text">
+                        <h2>Automate Test</h2>
+
+                        <h3>Create individual test </h3>
+
+                        <h4>Several actions are possible</h4>
+                        <div className="div-span-actions">
+                            <span><FontAwesomeIcon icon={faComputerMouse} />Click</span>
+                            <span><FontAwesomeIcon icon={faKeyboard} />Input Text</span>
+                            <span><FontAwesomeIcon icon={faAngleRight} />Navigation Forward</span>
+                            <span><FontAwesomeIcon icon={faAngleRight} />Navigation Back</span>
+                        </div>
+
+                        <h4>Retrieve HTML element attributes</h4>
+                        <div className="div-span-actions">
+                            <span>CLASS_NAME</span>
+                            <span>ID</span>
+                            <span>TAG_NAME</span>
+                            <span>NAME</span>
+                            <span>LINK_TEXT</span>
+                        </div>
+
+                    </div>
+                    <div className="box-app-video">
+                        <video width="750" height="500" loop autoPlay muted >
+                            <source src={vidAutoTest} type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
 
                 <div className="box-app" data-aos="fade-left">

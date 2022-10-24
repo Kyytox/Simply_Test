@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComputerMouse, faKeyboard } from "@fortawesome/free-solid-svg-icons";
 import "./actions.css";
 
 
-function CreateAction({ listActions, setListActions }) {
+function CreateAction(props) {
 
     const [nameAction, setNameAction] = useState("");
     const [typeAction, setTypeAction] = useState("input");
@@ -13,6 +13,25 @@ function CreateAction({ listActions, setListActions }) {
     const [nameElement, setNameElement] = useState("");
     const [timeWaitAction, setTimeWaitAction] = useState();
     const [idList, setIdList] = useState(1);
+    const [idActoinEditSauv, setIdActoinEditSauv] = useState(Number());
+
+    useEffect(() => {
+        if (props.editAction) {
+            if (props.idActionEdit !== undefined) {
+                const editListActions = props.listActions.filter((y) => y.idAction === Number(props.idActionEdit))
+
+                setNameElement(editListActions[0].nameElement)
+                setInputElement(editListActions[0].input)
+                setNameAction(editListActions[0].nameAction)
+                setTypeAction(editListActions[0].typeAction)
+                setTimeWaitAction(editListActions[0].timeWaitAction)
+
+                // save id Action edit the moment where edit btn is click
+                setIdActoinEditSauv(props.idActionEdit)
+                props.setIdActionEdit()
+            }
+        }
+    })
 
     // type Action 
     const typeActionChange = (e) => {
@@ -32,7 +51,6 @@ function CreateAction({ listActions, setListActions }) {
     // type find element 
     const typeElementChange = (e) => {
         setTypeElement(e.target.value)
-        console.log('typeElement', typeElement)
     };
 
     // name element
@@ -53,14 +71,39 @@ function CreateAction({ listActions, setListActions }) {
         //localStorage.setItem('list-actions', JSON.stringify(listActions));
 
         // add actions in listActions
-        setListActions(listActions.concat({ 'idAction': idList, 'nameAction': nameAction, 'typeAction': typeAction, 'input': inputElement,
-        'typeElement': typeElement, 'nameElement': nameElement, 'timeWaitAction': timeWaitAction, 'isCheck': 1 }))
+        props.setListActions(props.listActions.concat({
+            'idAction': idList, 'nameAction': nameAction, 'typeAction': typeAction, 'input': inputElement,
+            'typeElement': typeElement, 'nameElement': nameElement, 'timeWaitAction': timeWaitAction, 'isCheck': 1
+        }))
         setNameElement("")
         setInputElement("")
         setNameAction("")
         setTypeAction("input")
         setTimeWaitAction()
-        console.log(listActions)
+    }
+
+    // edit Action 
+    const EditAction = (e) => {        
+        // update action in listAction 
+        const updatedAction = props.listActions.map((action) => {
+            if (action.idAction === idActoinEditSauv) {
+                action.nameAction = nameAction;
+                action.typeAction = typeAction;
+                action.input = inputElement;
+                action.typeElement = typeElement;
+                action.nameElement = nameElement;
+                action.timeWaitAction = timeWaitAction;
+            }
+            return action;
+        });
+
+        props.setListActions(updatedAction)
+        setNameElement("")
+        setInputElement("")
+        setNameAction("")
+        setTypeAction("input")
+        setTimeWaitAction()
+        props.setEditAction(false)
     }
 
     return (
@@ -96,7 +139,7 @@ function CreateAction({ listActions, setListActions }) {
                         <span>NAME</span>
                     </label>
                     <label>
-                        <input type="radio" value="PARTIAL_LINK_TEXT" onChange={typeElementChange} checked={typeElement === 'PARTIAL_LINK_TEXT'} />
+                        <input type="radio" value="LINK_TEXT" onChange={typeElementChange} checked={typeElement === 'LINK_TEXT'} />
                         <span>TEXT LINK</span>
                     </label>
                     <label>
@@ -113,7 +156,10 @@ function CreateAction({ listActions, setListActions }) {
                     <p>sec</p>
                 </label>
             </div>
-            <button onClick={textSubmit} id="btn-create-action" className="btn-79"><span>Create</span></button>
+            {props.editAction
+                ? <button onClick={EditAction} id="btn-edit-action" className="btn-79"><span>Edit</span></button>
+                : <button onClick={textSubmit} id="btn-create-action" className="btn-79"><span>Create</span></button>
+            }
         </div>
     );
 };

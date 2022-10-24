@@ -7,6 +7,8 @@ function Actions() {
 
     const [listActions, setListActions] = useState([]);
     const [displayBtnSelenium, setDisplayBtnSelenium] = useState(1);
+    const [editAction, setEditAction] = useState(false)
+    const [idActionEdit, setIdActionEdit] = useState()
 
     function callSelenium() {
         console.log('function callSelenium');
@@ -29,13 +31,17 @@ function Actions() {
                 <CreateAction
                     listActions={listActions}
                     setListActions={setListActions}
+                    editAction={editAction}
+                    setEditAction={setEditAction}
+                    idActionEdit={idActionEdit}
+                    setIdActionEdit={setIdActionEdit}
                 ></CreateAction>
             </div>
             <div className="list-actions">
                 <div className="div-btn-selenium">
                     {listActions.length > 0 
-                         ? displayBtnSelenium === 1
-                            ? <button class="btn-5" onClick={callSelenium}><span>Tester</span></button>
+                        ? displayBtnSelenium === 1
+                            ? <button className="btn-5" onClick={callSelenium}><span>Tester</span></button>
                             : <p>Select minimum one test</p>
                         : <p></p>
                     } 
@@ -44,6 +50,8 @@ function Actions() {
                     listActions={listActions}
                     setListActions={setListActions}
                     setDisplayBtnSelenium={setDisplayBtnSelenium}
+                    setEditAction={setEditAction}
+                    setIdActionEdit={setIdActionEdit}
                 ></ListActions>
             </div>
         </div>

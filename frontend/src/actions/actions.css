@@ -9,7 +9,7 @@
 /* Create Action */
 .content {
     /* border: 1px solid blue; */
-    width: 27%;
+    width: 21%;
     position: fixed;
     top: 9%;
     left: 0;
@@ -35,7 +35,7 @@
 }
 
 .div-create-action h3 {
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .div-form-action {
@@ -88,11 +88,12 @@
 /* CHECKED STYLES */
 [type=radio]:checked+span {
     /* outline: 1.5px solid #f00; */
-    background: #141E30;
+    /* background: #141E30; */
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #243B55, #202f4b);
-    background: linear-gradient(to top, #243B55, #202f4b);
-
+    /* background: -webkit-linear-gradient(to top, #243B55, #202f4b); */
+    /* background: linear-gradient(to top, #243B55, #202f4b); */
+    background: rgb(241, 97, 112);
+    background: linear-gradient(198deg, rgba(241, 97, 112, 0.7) 0%, rgba(183, 65, 134, 0.83) 35%, rgba(31, 165, 216, 0.9) 100%);
 }
 
 .div-form-element {
@@ -307,7 +308,7 @@
 /* Liist actions */
 .list-actions {
     /* border: 1px solid green; */
-    margin-left: 27%;
+    margin-left: 21%;
     width: 100%;
     padding: 20px;
     padding-right: 0;
@@ -336,6 +337,10 @@
 .btn-5:before {
     border: 0;
     box-sizing: border-box;
+}
+
+.btn-5:hover{
+    color: indianred;
 }
 
 .btn-5 {
@@ -392,10 +397,11 @@
 
 .btn-5:before {
     --tilt: 1.2rem;
-    background: #141E30;
-    /*fallbackforoldbrowsers*/
+    /*background: #141E30;
     background: -webkit-linear-gradient(to top, #243B55, #202f4b);
     background: linear-gradient(to top, #243B55, #202f4b);
+    */background: rgb(241, 97, 112);
+    background: linear-gradient(198deg, rgba(241, 97, 112, 0.7) 0%, rgba(183, 65, 134, 0.83) 35%, rgba(31, 165, 216, 0.9) 100%);
     -webkit-clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 50%, calc(100% - var(--tilt)) 100%, 0 100%);
     clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 50%, calc(100% - var(--tilt)) 100%, 0 100%);
     content: "";
@@ -405,11 +411,11 @@
     position: absolute;
     top: 0;
     width: calc(100% + var(--tilt));
-    transition: transform 0.4s ease;
-    -webkit-transition: transform 0.4s ease;
-    -moz-transition: transform 0.4s ease;
-    -ms-transition: transform 0.4s ease;
-    -o-transition: transform 0.4s ease;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transform: translateX(var(--progress, 0));
     -webkit-transform: translateX(var(--progress, 0));
     -moz-transform: translateX(var(--progress, 0));
@@ -521,7 +527,8 @@
     justify-content: space-between;
 }
 
-.btn-delete-action {
+.btn-action button {
+    cursor: pointer;
     background: none;
     color: white;
     border: 0;
