@@ -319,14 +319,40 @@
     width: 89%;
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
     margin-bottom: 25px;
 }
 
-.div-btn-selenium p {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 12px;
+
+/* Input URL */
+.div-btn-selenium input {
+    margin-right: 10px;
+    width: 30%;
     color: white;
+    background: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    height: 35px;
+    padding-left: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.div-btn-selenium input:required {
+    border: 0.3px solid red;
+}
+
+.div-btn-selenium input::placeholder {
+    color: rgb(207, 207, 207);
+    font-size: 13px;
+}
+
+.div-btn-selenium input:focus {
+    outline: none;
 }
 
 .btn-5,
@@ -426,6 +452,8 @@
 .btn-5:hover:before {
     --progress: 100%;
 }
+
+
 
 
 

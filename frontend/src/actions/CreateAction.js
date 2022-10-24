@@ -151,7 +151,7 @@ function CreateAction(props) {
                 <input type="text" name="nameElt" placeholder="Element Name" value={nameElement} onChange={nameElementChange} />
                 <input type="text" name="input" placeholder="Input Text" value={inputElement} onChange={inputElementChange} />
                 <label className="time">
-                    <p>Attente après action: </p>
+                    <p>Wait after action: </p>
                     <input type="number" name="time-wait" min="1" max="100" value={timeWaitAction} onChange={timeWaitActionChange}></input>
                     <p>sec</p>
                 </label>
