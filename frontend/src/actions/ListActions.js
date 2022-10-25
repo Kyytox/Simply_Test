@@ -53,11 +53,11 @@ function ListActions(props) {
 
             <div className="infos-elements">
                 <span>
-                    <p id="input-element">Text input</p>
+                    <p id="input-element">Input Text</p>
                     <p id="input-value">{item.input}</p>
                 </span>
                 <span>
-                    <p id="time-wait-action">Attente</p>
+                    <p id="time-wait-action">Wait</p>
                     <p id="time-value">{item.timeWaitAction} sec</p>
                 </span>     
             </div>

@@ -68,13 +68,12 @@ function CreateAction(props) {
     const textSubmit = (e) => {
         setIdList(idList + 1)
 
-        //localStorage.setItem('list-actions', JSON.stringify(listActions));
-
         // add actions in listActions
         props.setListActions(props.listActions.concat({
             'idAction': idList, 'nameAction': nameAction, 'typeAction': typeAction, 'input': inputElement,
             'typeElement': typeElement, 'nameElement': nameElement, 'timeWaitAction': timeWaitAction, 'isCheck': 1
         }))
+
         setNameElement("")
         setInputElement("")
         setNameAction("")
@@ -83,7 +82,7 @@ function CreateAction(props) {
     }
 
     // edit Action 
-    const EditAction = (e) => {        
+    const EditAction = (e) => {
         // update action in listAction 
         const updatedAction = props.listActions.map((action) => {
             if (action.idAction === idActoinEditSauv) {
@@ -107,7 +106,7 @@ function CreateAction(props) {
     }
 
     return (
-        <div className="div-create-action">
+        <div className="div-create-action" data-aos="fade-right">
             <h3>Create Test</h3>
             <div className="div-form-action">
                 <h4>Action</h4>
@@ -149,7 +148,10 @@ function CreateAction(props) {
                 </div>
 
                 <input type="text" name="nameElt" placeholder="Element Name" value={nameElement} onChange={nameElementChange} />
-                <input type="text" name="input" placeholder="Input Text" value={inputElement} onChange={inputElementChange} />
+                {typeAction === 'input'
+                    ? <input type="text" name="input" placeholder="Input Text" value={inputElement} onChange={inputElementChange} />
+                    : <p></p>
+                }
                 <label className="time">
                     <p>Wait after action: </p>
                     <input type="number" name="time-wait" min="1" max="100" value={timeWaitAction} onChange={timeWaitActionChange}></input>

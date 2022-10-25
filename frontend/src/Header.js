@@ -16,7 +16,7 @@ function Header() {
               Home
             </NavLink>
 
-            <NavLink to="/automatetests">
+            <NavLink to="/automatetests" className="test">
               Automate
             </NavLink>
 
