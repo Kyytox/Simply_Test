@@ -39,22 +39,13 @@ function Actions() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(list_send_selenium)
+            body: JSON.stringify({ url:urlSelnium, list: list_send_selenium})
         })
 
-        // fetch("http://127.0.0.1:5000/sel", {
-        //     method: 'POST',
-        //     mode: 'no-cors',
-        //     body: JSON.stringify({ list_send_selenium })
-        // }).then(response => {
-        //     // Your callback code goes here
-        // })
-        //     .catch(error => {
-        //         console.error(error);
-        //         // This is executed when the request fails
-        //     });
         // setUrlSelnium("")
     };
+
+    console.log('urlSelnium.substring(1,4): ', urlSelnium.substring(0,4))
 
     return (
         <div className="main-action">
@@ -72,12 +63,12 @@ function Actions() {
                 <div className="div-btn-selenium">
                     {listActions.length
                         ? displayBtnSelenium === 1
-                            ? urlSelnium !== ""
-                                ? <><button className="btn-5" onClick={callSelenium} data-aos="fade-down"><span>Tester</span></button>
-                                    <input type="text" name="input" placeholder="Url page test" value={urlSelnium} onChange={urlSelniumChange} data-aos="fade-down" />
+                            ? urlSelnium !== "" && urlSelnium.substring(0,4) === 'http'
+                                ? <><button className="btn-5" onClick={callSelenium} data-aos="fade-down"><span>Launch</span></button>
+                                    <input type="url" name="input" placeholder="Url test page" value={urlSelnium} onChange={urlSelniumChange} data-aos="fade-down" />
                                 </>
-                                : <><button className="btn-5" onClick={callSelenium} disabled data-aos="fade-down"><span>Tester</span></button>
-                                    <input type="text" name="input" placeholder="Url page test" value={urlSelnium} onChange={urlSelniumChange} required data-aos="fade-down" />
+                                : <><button className="btn-5" onClick={callSelenium} disabled data-aos="fade-down"><span>Launch</span></button>
+                                    <input type="url" name="input" placeholder="Url test page" value={urlSelnium} onChange={urlSelniumChange} required data-aos="fade-down" />
                                 </>
                             : <p>Select minimum one test</p>
                         : <p></p>
