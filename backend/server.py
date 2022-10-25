@@ -1,5 +1,5 @@
 # Import flask and datetime module for showing date and time
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, request
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -8,15 +8,62 @@ import time
 # Initializing flask app
 app = Flask(__name__)
 
-
+@app.route('/')
+def hello():
+    return 'Hello'
 
 # Route for call Selenium
-@app.route('/sel')
+@app.route('/sel', methods=['POST'])
 def get_selenium():
     
+    print('test-----')
+    arrActions = request.get_json('body')
+
     driver = webdriver.Chrome("chromedriver.exe")
-    driver.get("http://localhost:1223/")
-    time.sleep(5)
+    driver.set_window_size(1700, 1080)
+    driver.get("http://localhost:3000/")
+    time.sleep(3)
+    
+    for x in arrActions: 
+        typeAction = x.get('typeAction')
+        textInput = x.get('input')
+        typeElement = x.get('typeElement')
+        nameElement = x.get('nameElement')
+        waitTime = x.get('timeWaitAction')
+
+        # print('typeAction: ', typeAction)
+        # print('typeElement: ', typeElement)
+        # print('nameElement: ', nameElement)
+
+        if typeAction == 'click':
+            match typeElement:
+                case "ID":
+                    driver.find_element(By.ID, nameElement).click()
+                case "CLASS_NAME":
+                    driver.find_element(By.CLASS_NAME, nameElement).click()
+                case "NAME":
+                    driver.find_element(By.NAME, nameElement).click()
+                case "TAG_NAME":
+                    driver.find_element(By.TAG_NAME, nameElement).click()
+                case "LINK_TEXT":
+                    driver.find_element(By.LINK_TEXT, nameElement).click()
+        elif typeAction == 'input':
+            match typeElement:
+                case "ID":
+                    driver.find_element(By.ID, nameElement)
+                case "CLASS_NAME":
+                    element = driver.find_element(By.CLASS_NAME, nameElement)
+                    element.send_keys(textInput)
+                case "NAME":
+                    element = driver.find_element(By.NAME, nameElement)
+                    element.send_keys(textInput)
+                case "TAG_NAME":
+                    driver.find_element(By.TAG_NAME, nameElement)
+                case "LINK_TEXT":
+                    driver.find_element(By.LINK_TEXT, nameElement)             
+        time.sleep(int(waitTime))
+    
+    
     driver.close()
 
     return ("launch Selenium")
@@ -25,5 +72,5 @@ def get_selenium():
 
 # Running app
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    # app.run(host='0.0.0.0', port=8002)
     app.run(debug=True)
