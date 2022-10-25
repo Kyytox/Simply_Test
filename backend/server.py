@@ -17,11 +17,12 @@ def hello():
 def get_selenium():
     
     print('test-----')
-    arrActions = request.get_json('body')
+    arrActions = request.get_json('body')['list']
+    urlDriver = request.get_json('body')['url']
 
     driver = webdriver.Chrome("chromedriver.exe")
     driver.set_window_size(1700, 1080)
-    driver.get("http://localhost:3000/")
+    driver.get(urlDriver)
     time.sleep(3)
     
     for x in arrActions: 
@@ -29,7 +30,7 @@ def get_selenium():
         textInput = x.get('input')
         typeElement = x.get('typeElement')
         nameElement = x.get('nameElement')
-        waitTime = x.get('timeWaitAction')
+        waitTime = 1 if x.get('timeWaitAction') == None else int(x.get('timeWaitAction')) 
 
         # print('typeAction: ', typeAction)
         # print('typeElement: ', typeElement)
@@ -50,7 +51,8 @@ def get_selenium():
         elif typeAction == 'input':
             match typeElement:
                 case "ID":
-                    driver.find_element(By.ID, nameElement)
+                    element = driver.find_element(By.ID, nameElement)
+                    element.send_keys(textInput)
                 case "CLASS_NAME":
                     element = driver.find_element(By.CLASS_NAME, nameElement)
                     element.send_keys(textInput)
@@ -58,10 +60,12 @@ def get_selenium():
                     element = driver.find_element(By.NAME, nameElement)
                     element.send_keys(textInput)
                 case "TAG_NAME":
-                    driver.find_element(By.TAG_NAME, nameElement)
+                    element = driver.find_element(By.TAG_NAME, nameElement)
+                    element.send_keys(textInput)
                 case "LINK_TEXT":
-                    driver.find_element(By.LINK_TEXT, nameElement)             
-        time.sleep(int(waitTime))
+                    element = driver.find_element(By.LINK_TEXT, nameElement)   
+                    element.send_keys(textInput)          
+        time.sleep(waitTime)
     
     
     driver.close()
