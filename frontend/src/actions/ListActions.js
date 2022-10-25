@@ -58,7 +58,7 @@ function ListActions(props) {
                 </span>
                 <span>
                     <p id="time-wait-action">Wait</p>
-                    <p id="time-value">{item.timeWaitAction} sec</p>
+                    <p id="time-value">{item.timeWaitAction}sec</p>
                 </span>     
             </div>
             <div className="btn-action">

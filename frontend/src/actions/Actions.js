@@ -27,10 +27,8 @@ function Actions() {
     }
 
     function callSelenium() {
-        console.log('function callSelenium');
 
         var list_send_selenium = listActions.filter(x => x.isCheck === 1)
-        console.log('list_send_selenium: ', list_send_selenium)
 
         fetch("http://127.0.0.1:5000/sel", {
             method: "POST",
@@ -44,8 +42,6 @@ function Actions() {
 
         // setUrlSelnium("")
     };
-
-    console.log('urlSelnium.substring(1,4): ', urlSelnium.substring(0,4))
 
     return (
         <div className="main-action">

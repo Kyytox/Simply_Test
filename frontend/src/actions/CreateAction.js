@@ -20,10 +20,11 @@ function CreateAction(props) {
             if (props.idActionEdit !== undefined) {
                 const editListActions = props.listActions.filter((y) => y.idAction === Number(props.idActionEdit))
 
-                setNameElement(editListActions[0].nameElement)
-                setInputElement(editListActions[0].input)
                 setNameAction(editListActions[0].nameAction)
                 setTypeAction(editListActions[0].typeAction)
+                setInputElement(editListActions[0].input)
+                setTypeElement(editListActions[0].typeElement)
+                setNameElement(editListActions[0].nameElement)
                 setTimeWaitAction(editListActions[0].timeWaitAction)
 
                 // save id Action edit the moment where edit btn is click
