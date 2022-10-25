@@ -108,7 +108,10 @@ function CreateAction(props) {
 
     return (
         <div className="div-create-action" data-aos="fade-right">
-            <h3>Create Test</h3>
+            {props.editAction
+                ? <h3>Edit Test</h3>
+                : <h3>Create Test</h3>
+            }
             <div className="div-form-action">
                 <h4>Action</h4>
                 <div className="div-type-action-radio">
