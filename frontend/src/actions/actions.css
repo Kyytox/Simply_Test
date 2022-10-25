@@ -52,9 +52,14 @@
     width: 70%;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 20px;
+}
+
+.div-type-action-radio label {
+    width: 40%;
+    text-align: center;
 }
 
 .div-type-action-radio span {
@@ -64,13 +69,16 @@
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 15px 30px;
+    align-items: center;
+    padding: 20px 30px;
+    margin-bottom: 10px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+
 
 /* HIDE RADIO */
 [type=radio] {
@@ -95,6 +103,7 @@
     background: rgb(241, 97, 112);
     background: linear-gradient(198deg, rgba(241, 97, 112, 0.7) 0%, rgba(183, 65, 134, 0.83) 35%, rgba(31, 165, 216, 0.9) 100%);
 }
+
 
 .div-form-element {
     width: 100%;

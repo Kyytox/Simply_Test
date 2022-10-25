@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComputerMouse, faKeyboard } from "@fortawesome/free-solid-svg-icons";
+import { faComputerMouse, faKeyboard, faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import "./actions.css";
 
 
@@ -120,45 +120,57 @@ function CreateAction(props) {
                         <input type="radio" value="click" onChange={typeActionChange} checked={typeAction === 'click'} />
                         <span><FontAwesomeIcon icon={faComputerMouse} />Click</span>
                     </label>
+                    <label>
+                        <input type="radio" value="navBack" onChange={typeActionChange} checked={typeAction === 'navBack'} />
+                        <span><FontAwesomeIcon icon={faArrowLeft} />Back</span>
+                    </label>
+                    <label>
+                        <input type="radio" value="navForw" onChange={typeActionChange} checked={typeAction === 'navForw'} />
+                        <span><FontAwesomeIcon icon={faArrowRight} />Forward</span>
+                    </label>
                 </div>
                 <input type="text" name="name" placeholder="Action Name" value={nameAction} onChange={nameActionChange} />
             </div>
-            <div className="div-form-element">
-                <h4>Element</h4>
-                <div className="div-type-element-radio">
-                    <label>
-                        <input type="radio" value="ID" onChange={typeElementChange} checked={typeElement === 'ID'} />
-                        <span>ID</span>
-                    </label>
-                    <label>
-                        <input type="radio" value="CLASS_NAME" onChange={typeElementChange} checked={typeElement === 'CLASS_NAME'} />
-                        <span>CLASS</span>
-                    </label>
-                    <label>
-                        <input type="radio" value="NAME" onChange={typeElementChange} checked={typeElement === 'NAME'} />
-                        <span>NAME</span>
-                    </label>
-                    <label>
-                        <input type="radio" value="LINK_TEXT" onChange={typeElementChange} checked={typeElement === 'LINK_TEXT'} />
-                        <span>TEXT LINK</span>
-                    </label>
-                    <label>
-                        <input type="radio" value="TAG_NAME" onChange={typeElementChange} checked={typeElement === 'TAG_NAME'} />
-                        <span>TAG NAME</span>
+            {typeAction !== 'navBack' && typeAction !== 'navForw'
+
+                ? <div className="div-form-element">
+                    <h4>Element</h4>
+                    <div className="div-type-element-radio">
+                        <label>
+                            <input type="radio" value="ID" onChange={typeElementChange} checked={typeElement === 'ID'} />
+                            <span>ID</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="CLASS_NAME" onChange={typeElementChange} checked={typeElement === 'CLASS_NAME'} />
+                            <span>CLASS</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="NAME" onChange={typeElementChange} checked={typeElement === 'NAME'} />
+                            <span>NAME</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="LINK_TEXT" onChange={typeElementChange} checked={typeElement === 'LINK_TEXT'} />
+                            <span>TEXT LINK</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="TAG_NAME" onChange={typeElementChange} checked={typeElement === 'TAG_NAME'} />
+                            <span>TAG NAME</span>
+                        </label>
+                    </div>
+
+                    <input type="text" name="nameElt" placeholder="Element Name" value={nameElement} onChange={nameElementChange} />
+                    {typeAction === 'input'
+                        ? <input type="text" name="input" placeholder="Input Text" value={inputElement} onChange={inputElementChange} />
+                        : <p></p>
+                    }
+                    <label className="time">
+                        <p>Wait after action: </p>
+                        <input type="number" name="time-wait" min="1" max="100" value={timeWaitAction} onChange={timeWaitActionChange}></input>
+                        <p>sec</p>
                     </label>
                 </div>
-
-                <input type="text" name="nameElt" placeholder="Element Name" value={nameElement} onChange={nameElementChange} />
-                {typeAction === 'input'
-                    ? <input type="text" name="input" placeholder="Input Text" value={inputElement} onChange={inputElementChange} />
-                    : <p></p>
-                }
-                <label className="time">
-                    <p>Wait after action: </p>
-                    <input type="number" name="time-wait" min="1" max="100" value={timeWaitAction} onChange={timeWaitActionChange}></input>
-                    <p>sec</p>
-                </label>
-            </div>
+                : <div className="div-form-element"></div>
+            }
             {props.editAction
                 ? <button onClick={EditAction} id="btn-edit-action" className="btn-79"><span>Edit</span></button>
                 : <button onClick={textSubmit} id="btn-create-action" className="btn-79"><span>Create</span></button>
