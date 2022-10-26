@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Checkbox, Box, TextField } from "@mui/material";
+import { Checkbox, TextField } from "@mui/material";
 import "./design-test.css";
 
 
@@ -46,19 +46,20 @@ function ConfigDesignTest(props) {
 
     // input url
     const urlScreenChange = (e) => {
-        console.log('urlScreenChange: ', e.target.value)
         setUrlScreen(e.target.value)
     }
 
     // create Scrennshots 
     const createScreenshots = (e) => {
-        console.log('widthScreen: ', widthScreen)
-        console.log('windowsBrow: ', windowsBrow)
-        console.log('linuxBrow: ', linuxBrow)
+        // console.log('widthScreen: ', widthScreen)
+        // console.log('windowsBrow: ', windowsBrow)
+        // console.log('linuxBrow: ', linuxBrow)
 
         props.setListConfigScreen({
             'urlScreen': urlScreen, 'listWidthScreen': widthScreen, 'listWindowsBrow': windowsBrow, 'listLinuxBrow': linuxBrow
         })
+
+        props.setTopRetreiveScreen(true)
     }
 
     return (
