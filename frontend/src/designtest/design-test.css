@@ -1,0 +1,324 @@
+.div-config-design {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 15px;
+}
+
+.div-config-design h3 {
+    margin-bottom: 40px;
+}
+
+.main-config-design .content {
+    width: 30%;
+    position: fixed;
+    top: 9%;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: white;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-top-right-radius: 5px;
+}
+
+
+.config-width {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.config-width h4 {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.div-checkbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    padding: 5px 15px;
+}
+
+
+.config-width label {
+    display: flex;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.text-width {
+    background: none;
+    color: rgb(148, 148, 148);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px 10px;
+    /* width: 15%; */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+
+
+
+
+
+.os-borwser {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.os-borwser table {
+    width: 95%;
+    display: table;
+}
+
+.os-borwser table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+.os-borwser table tr {
+    display: flex;
+}
+
+.os-borwser table td {
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24%;
+    padding-top: 15px;
+}
+
+.td-checkbox {
+    font-size: 14px;
+}
+
+.version-browers {
+    background: none;
+    color: rgb(148, 148, 148);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.config-width label:hover .text-width,
+.os-borwser label:hover div {
+    color: white;
+}
+
+
+
+
+/* hidden checkBox */
+.config-width label span,
+.os-borwser label span {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+.config-width label,
+.os-borwser label {
+    cursor: pointer;
+}
+
+.os-borwser label {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* CHECKED STYLES */
+.config-width label .Mui-checked+.text-width,
+.os-borwser label .Mui-checked+div {
+    color: white;
+    background: rgb(241, 97, 112);
+    background: linear-gradient(198deg, rgba(241, 97, 112, 0.7) 0%, rgba(183, 65, 134, 0.83) 35%, rgba(31, 165, 216, 0.9) 100%);
+}
+
+
+
+
+
+
+
+.url {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.url label {
+    color: white;
+}
+
+.url [type=text] {
+    width: 100%;
+    color: white;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.url .Mui-disabled {
+    background: none;
+}
+
+
+
+.div-btn-create-screen {
+    text-align: center;
+}
+
+.btn-79,
+.btn-79 *,
+.btn-79 :after,
+.btn-79 :before,
+.btn-79:after,
+.btn-79:before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.btn-79:hover {
+    color: indianred;
+}
+
+.btn-79 {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    font-weight: 900;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+}
+
+.btn-79:disabled {
+    cursor: default;
+}
+
+.btn-79:-moz-focusring {
+    outline: auto;
+}
+
+.btn-79 svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.btn-79 [hidden] {
+    display: none;
+}
+
+.btn-79 {
+    --height: 80px;
+    background: none;
+    border-radius: 999px;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    height: var(--height);
+    -webkit-mask-image: none;
+    padding: 0 3rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.btn-79 span {
+    font-weight: 900;
+    mix-blend-mode: difference;
+}
+
+.btn-79:before {
+    /* background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px); */
+    background: rgb(241, 97, 112);
+    background: linear-gradient(198deg, rgba(241, 97, 112, 0.7) 0%, rgba(183, 65, 134, 0.83) 35%, rgba(31, 165, 216, 0.9) 100%);
+    border-radius: 20px;
+    content: "";
+    height: calc(var(--height) / 1.7);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    width: calc(var(--height) / 1.7);
+}
+
+.btn-79:hover:before {
+    left: 0;
+    width: 100%;
+}
+
+
+#btn-create-screen-disabled {
+    color: rgb(170, 169, 169);
+}
+
+
+#btn-create-screen-disabled:hover:before {
+    width: 17%;
+}
+
+#btn-create-screen-disabled:before {
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    border-radius: 20px;
+    content: "";
+    height: calc(var(--height) / 1.7);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    width: calc(var(--height) / 1.7);
+}
+
+#btn-create-screen-disabled:hover {
+    color: black;
+}

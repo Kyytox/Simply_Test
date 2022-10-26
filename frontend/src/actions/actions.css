@@ -426,10 +426,7 @@
 
 .btn-5:before {
     --tilt: 1.2rem;
-    /*background: #141E30;
-    background: -webkit-linear-gradient(to top, #243B55, #202f4b);
-    background: linear-gradient(to top, #243B55, #202f4b);
-    */background: rgb(241, 97, 112);
+    background: rgb(241, 97, 112);
     background: linear-gradient(198deg, rgba(241, 97, 112, 0.7) 0%, rgba(183, 65, 134, 0.83) 35%, rgba(31, 165, 216, 0.9) 100%);
     -webkit-clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 50%, calc(100% - var(--tilt)) 100%, 0 100%);
     clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 50%, calc(100% - var(--tilt)) 100%, 0 100%);
