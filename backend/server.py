@@ -16,7 +16,7 @@ def hello():
 @app.route('/sel', methods=['POST'])
 def get_selenium():
     
-    print('test-----')
+    print('get_selenium-----------------')
     arrActions = request.get_json('body')['list']
     urlDriver = request.get_json('body')['url']
 
@@ -75,6 +75,37 @@ def get_selenium():
 
     return ("launch Selenium")
 
+
+
+# Route for call Selenium
+@app.route('/retreiveScreen', methods=['POST'])
+def retreive_Screen():
+
+    print('retreive_Screen-----------------')
+    arrConfig = request.get_json('body')['listConfigScreen']
+    
+    print(arrConfig)
+    print(arrConfig['listWindowsBrow'][0])
+
+    urlDriver = arrConfig['urlScreen']
+    widthScreen = arrConfig['listWidthScreen'][0]
+
+    driver = webdriver.Chrome("chromedriver.exe")
+    driver.set_window_size(widthScreen, 1080)
+    driver.get(urlDriver)
+    
+    time.sleep(1)
+    driver.save_screenshot("test.png")
+    
+    time.sleep(1)
+    driver.set_window_size(300, 1080)
+    driver.save_screenshot("test01.png")
+    
+    time.sleep(1)
+    driver.close()
+
+
+    return ("launch Selenium")
 
 
 # Running app
